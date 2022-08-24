@@ -1,0 +1,22 @@
+
+
+/ {
+        leds {
+                compatible = "gpio-leds";
+                led_1: led_1 {
+                              gpios = <&gpiok 3 GPIO_ACTIVE_HIGH>;
+                              label = "User LD1";
+                              };
+                led_2: led_2 {
+                              gpios = <&gpiod 5 GPIO_ACTIVE_HIGH>;
+                              label = "User LD2";
+                              };                  
+
+        };
+
+        aliases {
+                  led0 = &led_1;
+                  led1 = &led_2;
+
+        };
+};
