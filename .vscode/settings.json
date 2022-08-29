@@ -1,0 +1,5 @@
+{
+  "files.associations": {
+    "mipi_dsi.h": "c"
+  }
+}

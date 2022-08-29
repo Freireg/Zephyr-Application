@@ -1,4 +1,6 @@
-
+/**
+ * Specifing MIPI Display Serial Interface device on devboard
+ */
 
 / {
         leds {
@@ -14,9 +16,29 @@
 
         };
 
+        mipi-dsi {
+                compatible = "mipi-dsi-host";
+                #address-cells = <1>;
+                #size-cells = <0>;
+                
+                display0: mipi-dsi-device@0 {
+                        compatible = "mipi-dsi-device";
+                        reg = <0x0 >;
+                        data-lanes = <3>;
+                        pixel-format = <0>;
+                };
+        };
+
         aliases {
                   led0 = &led_1;
                   led1 = &led_2;
-
-        };
+                  mipi_dsi0 = &display0;
+                };
 };
+
+
+
+
+
+
+
