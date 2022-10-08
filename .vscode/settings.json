@@ -1,5 +1,8 @@
 {
   "files.associations": {
     "mipi_dsi.h": "c"
-  }
+  },
+  "nrf-connect.applications": [
+    "${workspaceFolder}/app"
+  ]
 }
