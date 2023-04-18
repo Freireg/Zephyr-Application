@@ -10,8 +10,8 @@
   buttons{
     compatible = "gpio-keys";
 		mybutton: mybutton {
-			label = "User SW2";
-			gpios = <&gpioc 6 GPIO_ACTIVE_LOW>;
+			label = "User SW3";
+			gpios = <&gpioa 4 GPIO_ACTIVE_LOW>;
 		};
   };
 };
