@@ -70,6 +70,7 @@ void main(void)
 	printk("Press the button\n");
 	if (led.port) {
 		while (1) {
+			printk("A second has passed\n");
 			k_msleep(1000);
 		}
   }

@@ -1,0 +1,17 @@
+/{
+  leds{
+    compatible = "gpio-leds";
+    myled: myled{
+      gpios = <&gpiob 22 GPIO_ACTIVE_LOW>;
+			label = "User LD1";
+    };
+  };
+
+  buttons{
+    compatible = "gpio-keys";
+		mybutton: mybutton {
+			label = "User SW2";
+			gpios = <&gpioc 6 GPIO_ACTIVE_LOW>;
+		};
+  };
+};

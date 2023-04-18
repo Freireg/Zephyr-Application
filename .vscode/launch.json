@@ -8,10 +8,9 @@
             "name": "jlink",
             "servertype": "jlink",
             "interface": "swd",
-            "executable": "build/zephyr/zephyr.elf",
+            "executable": ".vscode/build/zephyr/zephyr.elf",
             "runToEntryPoint": "main",
-            "device": "STM32L476RG",
-            "svdFile": "STM32F429.svd",
+            "device": "MK64FN1M0VLL12",
             "toolchainPrefix": "arm-none-eabi"
         },
         {
@@ -20,7 +19,7 @@
             "request": "launch",
             "name": "stlink",
             "servertype": "openocd",
-            "executable": "build/zephyr/zephyr.elf",
+            "executable": ".vscode/build/zephyr/zephyr.elf",
             "runToEntryPoint": "main",
             "configFiles": [
                 "interface/stlink.cfg",
