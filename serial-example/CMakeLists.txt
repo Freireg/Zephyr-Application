@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.22)
-set(BOARD nucleo_l476rg)
+set(BOARD frdm_k64f)
 
 find_package(Zephyr)
 project(serial-example)
