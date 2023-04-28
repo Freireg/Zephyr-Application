@@ -58,45 +58,49 @@ void MemoryTask(void *p1, void *p2, void *p3)
 	}
 }
 
-K_THREAD_DEFINE(
-	BlinkTaskHandler, STACK_SIZE,
-	BlinkTask, NULL, NULL, NULL,
-	PRIORITY, 0, 0
-);
-K_THREAD_DEFINE(
-	ReportHandler, STACK_SIZE,
-	ReportStatus, NULL, NULL, NULL,
-	PRIORITY, 0, 0
-);
-K_THREAD_DEFINE(
-	MemoryHandler, STACK_SIZE,
-	MemoryTask, NULL, NULL, NULL,
-	PRIORITY, 0, 0
-);
+// K_THREAD_DEFINE(
+// 	BlinkTaskHandler, STACK_SIZE,
+// 	BlinkTask, NULL, NULL, NULL,
+// 	PRIORITY, 0, 0
+// );
+// K_THREAD_DEFINE(
+// 	ReportHandler, STACK_SIZE,
+// 	ReportStatus, NULL, NULL, NULL,
+// 	PRIORITY, 0, 0
+// );
+// K_THREAD_DEFINE(
+// 	MemoryHandler, STACK_SIZE,
+// 	MemoryTask, NULL, NULL, NULL,
+// 	PRIORITY, 0, 0
+// );
 
-// void main(void)
-// {
+static struct k_thread ReportTask_Data;
+static struct k_thread BlinkTask_Data;
+static struct k_thread MemoryTask_Data;
+
+K_THREAD_STACK_DEFINE(ReportStackArea, STACK_SIZE);
+K_THREAD_STACK_DEFINE(BlinkStackArea, STACK_SIZE);
+K_THREAD_STACK_DEFINE(MemoryStackArea, STACK_SIZE);
+
+void main(void)
+{
 	
-// 	k_tid_t ReportTaskHandler = k_thread_create(
-// 		&ReportTask_Data, ReportStackArea,
-// 		K_THREAD_STACK_SIZEOF(ReportStackArea),
-// 		ReportStatus, NULL, NULL, NULL,
-// 		PRIORITY, 0, K_NO_WAIT);
+	k_thread_create(
+		&ReportTask_Data, ReportStackArea,
+		STACK_SIZE,
+		ReportStatus, NULL, NULL, NULL,
+		PRIORITY, 0, K_NO_WAIT);
 
-// 	k_tid_t BlinkTaskHandler = k_thread_create(
-// 		&BlinkTask_Data, BlinkStackArea,
-// 		K_THREAD_STACK_SIZEOF(BlinkStackArea),
-// 		BlinkTask, NULL, NULL, NULL,
-// 		PRIORITY, 0, K_NO_WAIT);
+	k_thread_create(
+		&BlinkTask_Data, BlinkStackArea,
+		STACK_SIZE,
+		BlinkTask, NULL, NULL, NULL,
+		PRIORITY, 0, K_NO_WAIT);
 
-// 	k_tid_t MemoryTaskHandler = k_thread_create(
-// 		&MemoryTask_Data, MemoryStackArea,
-// 		K_THREAD_STACK_SIZEOF(MemoryStackArea),
-// 		MemoryTask, NULL, NULL, NULL,
-// 		PRIORITY, 0, K_NO_WAIT);
+	k_thread_create(
+		&MemoryTask_Data, MemoryStackArea,
+		STACK_SIZE,
+		MemoryTask, NULL, NULL, NULL,
+		PRIORITY, 0, K_NO_WAIT);
 		
-// 	while (1)
-// 	{
-		
-// 	}
-// }
+}
