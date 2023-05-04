@@ -1,23 +1,11 @@
 # Zephyr-Application
 
 ## Overview
-My personal Zephyr Applications Repo
+This is my personal Zephyr Workspace, in which I test and develop some basic interactions with Zephyr.
 
-## Current Status
-- Application: Blinky example using threads
-- Board compatibility: **stm32f4_disc**
-- Custom board: **VIRGULINO Board**
+In this repository you may find some basic thread spawning examples, how to structure a project with an include folder, playing with overlay files, etc.
 
-## Usefull VSCode Extensions
-
-- [nRF Connect for VS Code Extension Pack](https://marketplace.visualstudio.com/items?itemName=nordic-semiconductor.nrf-connect-extension-pack)
+I'll be commenting on some of those examples in the future, so I can have some easy access examples.
 
 ## More usefull info
-> Cheat Command lines (for building and releasing on nRF 52840 USB Dongle):
-```
-west build -p -b nrf52840dongle_nrf52840 app
-
-nrfutil pkg generate --hw-version 52 --sd-req=0x00         --application build/zephyr/zephyr.hex         --application-version 1 app.zip
-
-nrfutil dfu usb-serial -pkg app.zip -p /dev/ttyACM0
-```
+All the important stuff can be found in [Zephyr's Official Documentation](https://docs.zephyrproject.org/3.1.0/index.html).
