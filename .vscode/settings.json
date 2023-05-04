@@ -1,6 +1,7 @@
 {
   "files.associations": {
-    "mipi_dsi.h": "c"
+    "mipi_dsi.h": "c",
+    "kernel.h": "c"
   },
   "nrf-connect.applications": [
     "${workspaceFolder}/app"

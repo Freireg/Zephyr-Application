@@ -2,6 +2,7 @@
 #include <zephyr/drivers/gpio.h>
 #include <inttypes.h>
 
+
 /* Specs and Peripherals */
 #define LED0_NODE DT_ALIAS(led0)	//Green
 #define LED1_NODE DT_ALIAS(led1)	//Blue
