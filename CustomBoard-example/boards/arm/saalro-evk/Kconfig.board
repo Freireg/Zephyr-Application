@@ -1,0 +1,8 @@
+# SAALRO-EVK board configuration
+
+# Copyright (c) 2017 Linaro Limited
+# SPDX-License-Identifier: Apache-2.0
+
+config SAALRO-EVK
+	bool "SAALRO-EVK F429BI Development Board"
+	depends on SOC_STM32F429XX
