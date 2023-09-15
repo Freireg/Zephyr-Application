@@ -1,2 +1,7 @@
 build/
 *.zip
+
+Connector_PinHeader_2.54mm.pretty/
+ESP-ExtBoard-backups/
+*.drl
+*.gbr
